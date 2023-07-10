@@ -5,6 +5,10 @@ class PagesController < ApplicationController
   include PagesHelper
 
   def home
-    PagesHelper::foo
+      if calnamesearch.include?('Sorry')
+        @blah = "No matches found."
+      else
+        @blah = calnamesearch
+      end
   end
 end

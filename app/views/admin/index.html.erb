@@ -1,0 +1,27 @@
+<div class="container-fluid"><h1>Admin#index</h1><br></div>
+<%= render 'shared/nav' %> 
+<hr>
+	
+
+<div class="container-fluid">
+	<h5>Get SDSC Lawsuit</h5>
+	<%= form_with url: "/search", method: :get do |form| %>
+	 
+	  <%= form.label :cyear, "Case year:" %>
+	  <%= form.text_field :cyear %>
+
+	  <%= form.label :cnumber, "Case number:" %>
+	  <%= form.text_field :cnumber %>
+	  
+
+
+	  <%= form.submit "Search" %>
+
+	<% end %>
+</div>
+
+
+
+
+
+<hr>

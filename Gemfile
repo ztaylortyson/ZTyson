@@ -7,6 +7,8 @@ ruby "3.2.0"
 gem "rails", "~> 7.0.6"
 gem 'bootstrap', '~> 5.3.0.alpha3'
 gem 'jquery-rails'
+gem "selenium-webdriver"
+gem "webdrivers"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"

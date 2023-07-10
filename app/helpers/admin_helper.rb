@@ -1,33 +1,4 @@
-require 'open-uri'
-
-module PagesHelper
-
-
-
-	def calnamesearch
-		url = "https://www.sandiego.courts.ca.gov/scripts/seekcalendar.pl?z=portal&g=&j=&p=&a=tyson"
-		page = Nokogiri::HTML(URI.open(url))
-		foo = page.search("pre").text
-	end
-
-	def oecases
-		# url = "http://www.sandiego.courts.ca.gov/portal/online/calendar/D_SVCAL1.HTML"
-		# arry = []
-		# page = Nokogiri::HTML(URI.open(url))
-		# page.css('tr.MYDETAILTABLE > td > a').each do |cn|
-		# 	arry << cn.text.strip if cn.inner_html.split('-')[4] == 'OE'
-	end
-
-	
-
-
-
-
-
-	# def foo
-	# 	"hello, Zack!"
-	# end
-
+module AdminHelper
 
 	def get_captcha
 		word_list = [
@@ -161,6 +132,11 @@ module PagesHelper
 
 
 end
+
+
+
+
+
 
 
 
