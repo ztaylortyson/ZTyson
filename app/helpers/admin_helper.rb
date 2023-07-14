@@ -122,10 +122,13 @@ module AdminHelper
 				puts @driver.current_url 
 				doc = Nokogiri::HTML(@driver.page_source)
 
-				Dir.chdir(Rails.root.join("storage"))
-				open("#{case_year}-#{case_number}.html", 'a+') do |i|
-					
+				Dir.chdir(Rails.root.join("app", "views", "scrapes"))
+				#open("#{case_year}-#{case_number}.html.erb", 'a+') do |i|
+				open("#{case_year}-#{case_number}.html.erb", 'a+') do |i|
+					i << "<%= render 'shared/nav' %><br>" 
+					i << "<div class='container'>"
 					i << doc
+					i << "</div>"
 				end
 				@driver.quit
 			end

@@ -1,0 +1,10 @@
+<%= render 'shared/nav' %><br>
+<strong>stored lawsuits</strong>
+
+<div class="container-fluid">	
+		<% if @stored_lawsuits.any? %>
+			<% @stored_lawsuits.each do |i| %>
+				<%= @stored_lawsuits.index(i) %> <%= i %><%= link_to "View", yoyoyo_path(i) %><br>
+			<% end %> 	
+		<% end %> 
+</div>

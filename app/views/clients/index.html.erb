@@ -1,0 +1,16 @@
+<%= render 'shared/nav' %>
+<p style="color: green"><%= notice %></p>
+
+
+<div class="container-fluid">
+    <h1>Clients</h1>
+
+    <div id="clients">
+      <% @clients.each do |client| %>
+        <%= render client %> 
+      <% end %>
+    </div><br>
+
+
+    <%= link_to "New client", new_client_path, class:"btn btn-info" %>
+</div>

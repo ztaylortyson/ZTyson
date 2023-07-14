@@ -1,0 +1,17 @@
+<%= render 'shared/nav' %><br>
+
+
+<p style="color: green"><%= notice %></p>
+
+<h1>Roas</h1>
+
+<div class="container-fluid">
+	<div id="roas">
+	<% counter = 0 %>
+	  <% @roas.each do |roa| %>
+	  
+	      <%= link_to "#{counter} #{roa}", scrapes_view_path("#{counter}") %><br>
+	      <% counter = counter + 1 %>
+	  <% end %>
+	</div>
+</div>

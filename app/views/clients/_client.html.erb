@@ -1,0 +1,33 @@
+<div id="<%= dom_id client %>">
+
+  <div class="container-fluid">
+  
+      <table class="table-primary table-striped table-hover">
+        
+        <thead>
+          <tr class="table-primary">...
+              <th scope="col">Name </th>
+              <th scope="col"></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>
+              <%= link_to "#{client.lname}, #{client.fname}", client %>
+            </td>
+            <td>
+              <%= client.phone %>
+            </td>
+            <td>
+              
+            </td>
+          </tr>
+        </tbody>
+
+      </table>
+
+
+  </div>
+
+</div>

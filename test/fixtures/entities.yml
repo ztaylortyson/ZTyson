@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  dba: MyString
+  agentsp: MyString
+  owner: MyString
+  status: MyString
+
+two:
+  dba: MyString
+  agentsp: MyString
+  owner: MyString
+  status: MyString

@@ -22,3 +22,6 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+git push -u origin main
+
+* roa scraper: validation, prevent scraping if year or case number absent;

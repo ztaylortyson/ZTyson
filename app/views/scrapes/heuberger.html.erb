@@ -1,0 +1,404 @@
+<%= render 'shared/nav' %><br><div class="container"><!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" async="" src="https://ssl.google-analytics.com/ga.js"></script><script language="javascript" type="text/javascript">//<![CDATA[
+function faceletsDebug(URL) { day = new Date(); id = day.getTime(); eval("page" + id + " = window.open(URL, '" + id + "', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=1,width=800,height=600,left = 240,top = 212');"); };var faceletsOrigKeyup = document.onkeyup; document.onkeyup = function(e) { if (window.event) e = window.event; if (String.fromCharCode(e.keyCode) == 'D' & e.shiftKey & e.ctrlKey) faceletsDebug('/roa/faces/RoaDisplay.xhtml?facelets.ui.DebugOutput=1687699791394'); else if (faceletsOrigKeyup) faceletsOrigKeyup(e); };
+//]]>
+</script><link type="text/css" rel="stylesheet" href="/roa/faces/javax.faces.resource/theme.css?ln=primefaces-aristo">
+<link type="text/css" rel="stylesheet" href="/roa/faces/javax.faces.resource/primefaces.css?ln=primefaces&amp;v=4.0">
+<script type="text/javascript" src="/roa/faces/javax.faces.resource/jquery/jquery.js?ln=primefaces&amp;v=4.0"></script><script type="text/javascript" src="/roa/faces/javax.faces.resource/primefaces.js?ln=primefaces&amp;v=4.0"></script><script type="text/javascript" src="/roa/faces/javax.faces.resource/jquery/jquery-plugins.js?ln=primefaces&amp;v=4.0"></script><link type="text/css" rel="stylesheet" href="/roa/faces/javax.faces.resource/watermark/watermark.css?ln=primefaces&amp;v=4.0">
+<script type="text/javascript" src="/roa/faces/javax.faces.resource/watermark/watermark.js?ln=primefaces&amp;v=4.0"></script><link type="text/css" rel="stylesheet" href="/roa/faces/javax.faces.resource/roastyles.css?ln=css">
+      <title>San Diego Superior Court - Register of Actions</title>
+        <!-- # = 10/10/16 ==================== #
+             # Starting 10/5/16 the app is failing in Chrome browsers with 404 error trying to find favicon.ico
+             # Add the &lt;link rel ...&gt; tag, using the context path to find the favicon image
+             # =============================== #
+        -->
+	<link rel="shortcut icon" type="image/ico" href="/roa/resources/images/favicon.ico">
+</head>
+<body style="">
+<span id="googleanalytics">
+      <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-21199530-1']);
+        _gaq.push(['_trackPageview']);
+
+       (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+       })();
+      </script>
+    </span>
+
+<!--  &lt;f:verbatim&gt;
+ thanks be to eric 
+   note: unable to access images from just /resources 
+&lt;TABLE style=&quot;BACKGROUND-IMAGE: url(resources/images/divider.gif)&quot; cellSpacing=&quot;0&quot; cellPadding=&quot;0&quot; width=&quot;100%&quot; align=&quot;center&quot; border=&quot;0&quot;&gt;
+&lt;TBODY&gt;
+&lt;TR&gt;
+&lt;TD vAlign=&quot;top&quot;&gt;
+&lt;IMG width=&quot;576&quot; alt=&quot;Superior Court of California, County of San Diego - Register of Actions Kiosk&quot; src=&quot;resources/images/bannerseal.jpg&quot; border=&quot;0&quot;&gt;&lt;/IMG&gt;&lt;/TD&gt;&lt;/TR&gt;
+&lt;/TBODY&gt;
+&lt;/TABLE&gt;
+  &lt;/f:verbatim&gt;--><table border="0" cellpadding="0" cellspacing="0" style="background-image: url(resources/images/divider.gif)" width="100%">
+<tbody>
+<tr>
+<td><img src="resources/images/bannerseal.jpg" alt="Superior Court of California, County of San Diego - Register of Actions Kiosk" style="border: none;" width="576"></td>
+</tr>
+</tbody>
+</table>
+
+<form id="toolbar-form" name="toolbar-form" method="post" action="/roa/faces/RoaDisplay.xhtml" enctype="application/x-www-form-urlencoded">
+<input type="hidden" name="toolbar-form" value="toolbar-form">
+<div id="toolbar-form:toolbar" class="ui-toolbar ui-widget ui-widget-header ui-corner-all ui-helper-clearfix toolbar-buttons">
+<div class="ui-toolbar-group-left">
+<button id="toolbar-form:j_idt12" name="toolbar-form:j_idt12" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-left toolbar-color" onclick="parent.history.back(); return false;;PrimeFaces.ab({source:'toolbar-form:j_idt12'});return false;" type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-arrowthick-1-w"></span><span class="ui-button-text ui-c">Page</span></button><button id="toolbar-form:j_idt13" name="toolbar-form:j_idt13" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-left toolbar-color" type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-search"></span><span class="ui-button-text ui-c">Case Number Search</span></button><button id="toolbar-form:j_idt14" name="toolbar-form:j_idt14" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-left toolbar-color" type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-search"></span><span class="ui-button-text ui-c">Participant Name Search</span></button><button id="toolbar-form:j_idt15" name="toolbar-form:j_idt15" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-left toolbar-color" type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-search"></span><span class="ui-button-text ui-c">Date Search</span></button><button id="toolbar-form:j_idt16" name="toolbar-form:j_idt16" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-left toolbar-color" type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-search"></span><span class="ui-button-text ui-c">Unlawful Detainer Search</span></button><span class="ui-separator"><span class="ui-icon ui-icon-grip-dotted-vertical"></span></span><button id="toolbar-form:j_idt18" name="toolbar-form:j_idt18" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-left toolbar-color" onclick="window.open('PrinterFriendly.xhtml');" type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-document"></span><span class="ui-button-text ui-c">Printer Friendly Version</span></button><button id="toolbar-form:j_idt19" name="toolbar-form:j_idt19" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-left toolbar-color" onclick="window.open('Faq.xhtml');" type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-info"></span><span class="ui-button-text ui-c">FAQ</span></button>
+</div>
+<div class="ui-toolbar-group-right"><button id="toolbar-form:j_idt22" name="toolbar-form:j_idt22" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-left cart-color" type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-cart"></span><span class="ui-button-text ui-c">Cart</span></button></div>
+</div>
+<input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="-6070055690958789801:1846649999307050921" autocomplete="off">
+</form>
+
+      <p><span style="margin-left: 2px">Register of Actions (ROA)</span>
+      </p>
+<form id="j_idt31" name="j_idt31" method="post" action="/roa/faces/RoaDisplay.xhtml" class="standard-text label-color" enctype="application/x-www-form-urlencoded">
+<input type="hidden" name="j_idt31" value="j_idt31">
+<span id="j_idt31:growl"></span><div id="j_idt31:caseiinfo" class="ui-panel ui-widget ui-widget-content ui-corner-all small-text" data-widget="widget_j_idt31_caseiinfo">
+<div id="j_idt31:caseiinfo_header" class="ui-panel-titlebar ui-widget-header ui-helper-clearfix ui-corner-all"><span class="ui-panel-title">Case Information</span></div>
+<div id="j_idt31:caseiinfo_content" class="ui-panel-content ui-widget-content">
+<table class="small-text">
+<tbody>
+<tr>
+<td><span class="label-color">Case Number:</span></td>
+<td><span class="label-color bold-type" style="margin-right: 20px">37-2023-00028893-CU-WT-CTL</span></td>
+<td><span class="label-color">Date Filed:</span></td>
+<td><span class="bright-type">07/07/2023</span></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><span class="label-color">Case Title:</span></td>
+<td><span class="bright-type" style="margin-right: 9px">Heuberger vs Teepee III LLC [IMAGED]</span></td>
+<td><span class="label-color">Case Status:</span></td>
+<td><span class="bright-type">Pending</span></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><span class="label-color" style="margin-right: 5px">Case Category:</span></td>
+<td><span class="bright-type">Civil - Unlimited</span></td>
+<td><span class="label-color">Location:</span></td>
+<td><span class="bright-type">Central</span></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><span class="label-color">Case Type:</span></td>
+<td><span class="bright-type">Wrongful Termination</span></td>
+<td><span class="label-color" style="margin-right: 5px">Judicial Officer:</span></td>
+<td><span class="bright-type">Richard S. Whitney</span></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><span class="label-color">Case Age:</span></td>
+<td><span class="bright-type">5 days</span></td>
+<td><span class="label-color">Department:</span></td>
+<td><span class="bright-type">C-68</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="-6070055690958789801:1846649999307050921" autocomplete="off">
+</form>
+<form id="j_idt63" name="j_idt63" method="post" action="/roa/faces/RoaDisplay.xhtml" class="small-text" enctype="application/x-www-form-urlencoded">
+<input type="hidden" name="j_idt63" value="j_idt63">
+<div id="j_idt63:eventlist" class="ui-panel ui-widget ui-widget-content ui-corner-all small-text label-color" data-widget="widget_j_idt63_eventlist">
+<div id="j_idt63:eventlist_header" class="ui-panel-titlebar ui-widget-header ui-helper-clearfix ui-corner-all">
+<span class="ui-panel-title">Future Events</span><a id="j_idt63:eventlist_toggler" href="javascript:void(0)" class="ui-panel-titlebar-icon ui-corner-all ui-state-default"><span class="ui-icon ui-icon-minusthick"></span></a>
+</div>
+<div id="j_idt63:eventlist_content" class="ui-panel-content ui-widget-content"><div id="j_idt63:eventtable" class="ui-datatable ui-widget small-text">
+<div class="ui-datatable-tablewrapper"><table role="grid">
+<thead id="j_idt63:eventtable_head"><tr role="row">
+<th id="j_idt63:eventtable:j_idt64" class="ui-state-default ui-sortable-column" role="columnheader">
+<span><span class="label-color">Event Date</span></span><span class="ui-sortable-column-icon ui-icon ui-icon-carat-2-n-s"></span>
+</th>
+<th id="j_idt63:eventtable:j_idt67" class="ui-state-default ui-sortable-column" role="columnheader">
+<span><span class="label-color">Event Time</span></span><span class="ui-sortable-column-icon ui-icon ui-icon-carat-2-n-s"></span>
+</th>
+<th id="j_idt63:eventtable:j_idt70" class="ui-state-default ui-sortable-column" role="columnheader">
+<span><span class="label-color">Location</span></span><span class="ui-sortable-column-icon ui-icon ui-icon-carat-2-n-s"></span>
+</th>
+<th id="j_idt63:eventtable:j_idt73" class="ui-state-default ui-sortable-column" role="columnheader">
+<span><span class="label-color">Event Type</span></span><span class="ui-sortable-column-icon ui-icon ui-icon-carat-2-n-s"></span>
+</th>
+</tr></thead>
+<tfoot></tfoot>
+<tbody id="j_idt63:eventtable_data" class="ui-datatable-data ui-widget-content"><tr data-ri="0" class="ui-widget-content ui-datatable-even" role="row">
+<td role="gridcell"><span class="bright-type">01/26/2024</span></td>
+<td role="gridcell"><span class="bright-type">10:00 AM</span></td>
+<td role="gridcell"><span class="bright-type">C-68</span></td>
+<td role="gridcell"><span class="bright-type">Civil Case Management Conference - Complaint</span></td>
+</tr></tbody>
+</table></div>
+<div id="j_idt63:eventtable_paginator_bottom" class="ui-paginator ui-paginator-bottom ui-widget-header ui-corner-bottom">
+<span class="ui-paginator-first ui-state-default ui-corner-all ui-state-disabled"><span class="ui-icon ui-icon-seek-first">p</span></span><span class="ui-paginator-prev ui-state-default ui-corner-all ui-state-disabled"><span class="ui-icon ui-icon-seek-prev">p</span></span><span class="ui-paginator-pages"><span class="ui-paginator-page ui-state-default ui-state-active ui-corner-all">1</span></span><span class="ui-paginator-next ui-state-default ui-corner-all ui-state-disabled"><span class="ui-icon ui-icon-seek-next">p</span></span><span class="ui-paginator-last ui-state-default ui-corner-all ui-state-disabled"><span class="ui-icon ui-icon-seek-end">p</span></span>
+</div>
+</div></div>
+<input type="hidden" id="j_idt63:eventlist_collapsed" name="j_idt63:eventlist_collapsed" value="false">
+</div>
+<input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="-6070055690958789801:1846649999307050921" autocomplete="off">
+</form>
+<form id="j_idt76" name="j_idt76" method="post" action="/roa/faces/RoaDisplay.xhtml" class="small-text" enctype="application/x-www-form-urlencoded">
+<input type="hidden" name="j_idt76" value="j_idt76">
+<div id="j_idt76:partlist" class="ui-panel ui-widget ui-widget-content ui-corner-all small-text label-color" data-widget="widget_j_idt76_partlist">
+<div id="j_idt76:partlist_header" class="ui-panel-titlebar ui-widget-header ui-helper-clearfix ui-corner-all">
+<span class="ui-panel-title">Participants</span><a id="j_idt76:partlist_toggler" href="javascript:void(0)" class="ui-panel-titlebar-icon ui-corner-all ui-state-default"><span class="ui-icon ui-icon-minusthick"></span></a>
+</div>
+<div id="j_idt76:partlist_content" class="ui-panel-content ui-widget-content"><div id="j_idt76:parttable" class="ui-datatable ui-widget small-text">
+<div class="ui-datatable-tablewrapper"><table role="grid">
+<thead id="j_idt76:parttable_head"><tr role="row">
+<th id="j_idt76:parttable:j_idt77" class="ui-state-default ui-sortable-column" role="columnheader">
+<span><span class="label-color">Name</span></span><span class="ui-sortable-column-icon ui-icon ui-icon-carat-2-n-s"></span>
+</th>
+<th id="j_idt76:parttable:j_idt80" class="ui-state-default ui-sortable-column" role="columnheader">
+<span><span class="label-color">Role</span></span><span class="ui-sortable-column-icon ui-icon ui-icon-carat-2-n-s"></span>
+</th>
+<th id="j_idt76:parttable:j_idt83" class="ui-state-default ui-sortable-column" role="columnheader">
+<span><span class="label-color">Representation</span></span><span class="ui-sortable-column-icon ui-icon ui-icon-carat-2-n-s"></span>
+</th>
+</tr></thead>
+<tfoot></tfoot>
+<tbody id="j_idt76:parttable_data" class="ui-datatable-data ui-widget-content">
+<tr data-ri="0" class="ui-widget-content ui-datatable-even" role="row">
+<td role="gridcell"><span class="bright-type">HEUBERGER, ERINN </span></td>
+<td role="gridcell"><span class="bright-type">Plaintiff</span></td>
+<td role="gridcell"><span class="bright-type">Botham, Arthur R; Tyson, Zachary T</span></td>
+</tr>
+<tr data-ri="1" class="ui-widget-content ui-datatable-odd" role="row">
+<td role="gridcell"><span class="bright-type">Mathews, Tim </span></td>
+<td role="gridcell"><span class="bright-type">Defendant</span></td>
+<td role="gridcell"><span class="bright-type"></span></td>
+</tr>
+<tr data-ri="2" class="ui-widget-content ui-datatable-even" role="row">
+<td role="gridcell"><span class="bright-type">Potts, John T</span></td>
+<td role="gridcell"><span class="bright-type">Defendant</span></td>
+<td role="gridcell"><span class="bright-type"></span></td>
+</tr>
+<tr data-ri="3" class="ui-widget-content ui-datatable-odd" role="row">
+<td role="gridcell"><span class="bright-type">TEEPEE III LLC</span></td>
+<td role="gridcell"><span class="bright-type">Defendant</span></td>
+<td role="gridcell"><span class="bright-type"></span></td>
+</tr>
+</tbody>
+</table></div>
+<div id="j_idt76:parttable_paginator_bottom" class="ui-paginator ui-paginator-bottom ui-widget-header ui-corner-bottom">
+<span class="ui-paginator-first ui-state-default ui-corner-all ui-state-disabled"><span class="ui-icon ui-icon-seek-first">p</span></span><span class="ui-paginator-prev ui-state-default ui-corner-all ui-state-disabled"><span class="ui-icon ui-icon-seek-prev">p</span></span><span class="ui-paginator-pages"><span class="ui-paginator-page ui-state-default ui-state-active ui-corner-all">1</span></span><span class="ui-paginator-next ui-state-default ui-corner-all ui-state-disabled"><span class="ui-icon ui-icon-seek-next">p</span></span><span class="ui-paginator-last ui-state-default ui-corner-all ui-state-disabled"><span class="ui-icon ui-icon-seek-end">p</span></span>
+</div>
+</div></div>
+<input type="hidden" id="j_idt76:partlist_collapsed" name="j_idt76:partlist_collapsed" value="false">
+</div>
+<input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="-6070055690958789801:1846649999307050921" autocomplete="off">
+</form>
+<form id="j_idt86" name="j_idt86" method="post" action="/roa/faces/RoaDisplay.xhtml" class="small-text" enctype="application/x-www-form-urlencoded">
+<input type="hidden" name="j_idt86" value="j_idt86">
+<div id="j_idt86:replist" class="ui-panel ui-widget ui-widget-content ui-corner-all small-text label-color" data-widget="widget_j_idt86_replist">
+<div id="j_idt86:replist_header" class="ui-panel-titlebar ui-widget-header ui-helper-clearfix ui-corner-all">
+<span class="ui-panel-title">Representation</span><a id="j_idt86:replist_toggler" href="javascript:void(0)" class="ui-panel-titlebar-icon ui-corner-all ui-state-default"><span class="ui-icon ui-icon-minusthick"></span></a>
+</div>
+<div id="j_idt86:replist_content" class="ui-panel-content ui-widget-content"><div id="j_idt86:reptable" class="ui-datatable ui-widget small-text">
+<div class="ui-datatable-tablewrapper"><table role="grid">
+<thead id="j_idt86:reptable_head"><tr role="row">
+<th id="j_idt86:reptable:j_idt87" class="ui-state-default ui-sortable-column" role="columnheader">
+<span><span class="label-color">Name</span></span><span class="ui-sortable-column-icon ui-icon ui-icon-carat-2-n-s"></span>
+</th>
+<th id="j_idt86:reptable:j_idt90" class="ui-state-default ui-sortable-column" role="columnheader">
+<span><span class="label-color">Address</span></span><span class="ui-sortable-column-icon ui-icon ui-icon-carat-2-n-s"></span>
+</th>
+<th id="j_idt86:reptable:j_idt93" class="ui-state-default ui-sortable-column" role="columnheader">
+<span><span class="label-color">Phone Number</span></span><span class="ui-sortable-column-icon ui-icon ui-icon-carat-2-n-s"></span>
+</th>
+</tr></thead>
+<tfoot></tfoot>
+<tbody id="j_idt86:reptable_data" class="ui-datatable-data ui-widget-content">
+<tr data-ri="0" class="ui-widget-content ui-datatable-even" role="row">
+<td role="gridcell"><span class="bright-type">BOTHAM, ARTHUR  R </span></td>
+<td role="gridcell"><span class="bright-type">LAW OFFICE OF ZACHARY T TYSON 2169 First Avenue San Diego CA 92101</span></td>
+<td role="gridcell"><span class="bright-type">(619) 993-9092</span></td>
+</tr>
+<tr data-ri="1" class="ui-widget-content ui-datatable-odd" role="row">
+<td role="gridcell"><span class="bright-type">TYSON, ZACHARY  T </span></td>
+<td role="gridcell"><span class="bright-type">LAW OFFICE OF ZACHARY T TYSON 2169 First Avenue San Diego CA 92101</span></td>
+<td role="gridcell"><span class="bright-type">(619) 237-9292</span></td>
+</tr>
+</tbody>
+</table></div>
+<div id="j_idt86:reptable_paginator_bottom" class="ui-paginator ui-paginator-bottom ui-widget-header ui-corner-bottom">
+<span class="ui-paginator-first ui-state-default ui-corner-all ui-state-disabled"><span class="ui-icon ui-icon-seek-first">p</span></span><span class="ui-paginator-prev ui-state-default ui-corner-all ui-state-disabled"><span class="ui-icon ui-icon-seek-prev">p</span></span><span class="ui-paginator-pages"><span class="ui-paginator-page ui-state-default ui-state-active ui-corner-all">1</span></span><span class="ui-paginator-next ui-state-default ui-corner-all ui-state-disabled"><span class="ui-icon ui-icon-seek-next">p</span></span><span class="ui-paginator-last ui-state-default ui-corner-all ui-state-disabled"><span class="ui-icon ui-icon-seek-end">p</span></span>
+</div>
+</div></div>
+<input type="hidden" id="j_idt86:replist_collapsed" name="j_idt86:replist_collapsed" value="false">
+</div>
+<input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="-6070055690958789801:1846649999307050921" autocomplete="off">
+</form>
+<form id="roaform" name="roaform" method="post" action="/roa/faces/RoaDisplay.xhtml" class="small-text" enctype="application/x-www-form-urlencoded">
+<input type="hidden" name="roaform" value="roaform">
+<div id="roaform:roapanel" class="ui-panel ui-widget ui-widget-content ui-corner-all small-text label-color" data-widget="widget_roaform_roapanel">
+<div id="roaform:roapanel_header" class="ui-panel-titlebar ui-widget-header ui-helper-clearfix ui-corner-all">
+<span class="ui-panel-title">Register of Actions</span><a id="roaform:roapanel_toggler" href="javascript:void(0)" class="ui-panel-titlebar-icon ui-corner-all ui-state-default"><span class="ui-icon ui-icon-minusthick"></span></a>
+</div>
+<div id="roaform:roapanel_content" class="ui-panel-content ui-widget-content">
+<button id="roaform:filterall" name="roaform:filterall" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" onclick="PrimeFaces.ab({source:'roaform:filterall',update:'roaform:roapanel'});return false;" style="color: #0066CC; font-weight: bold;" type="submit" role="button" aria-disabled="false"><span class="ui-button-text ui-c">All Entries</span></button><button id="roaform:filterfil" name="roaform:filterfil" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" onclick="PrimeFaces.ab({source:'roaform:filterfil',update:'roaform:roapanel'});return false;" style="color: #000000" type="submit" role="button" aria-disabled="false"><span class="ui-button-text ui-c">Filing Entries</span></button><button id="roaform:filtermin" name="roaform:filtermin" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" onclick="PrimeFaces.ab({source:'roaform:filtermin',update:'roaform:roapanel'});return false;" style="color: #000000;" type="submit" role="button" aria-disabled="false"><span class="ui-button-text ui-c">Minutes Entries</span></button><button id="roaform:filtersch" name="roaform:filtersch" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" onclick="PrimeFaces.ab({source:'roaform:filtersch',update:'roaform:roapanel'});return false;" style="color: #000000" type="submit" role="button" aria-disabled="false"><span class="ui-button-text ui-c">Scheduling Entries</span></button><div id="roaform:roatable" class="ui-datatable ui-widget small-text">
+<div class="ui-datatable-header ui-widget-header ui-corner-top"><div id="roaform:roatable:j_idt96" class="ui-outputpanel ui-widget">
+<img id="roaform:roatable:searchimage" src="resources/images/search.png" class="icon-align"><input id="roaform:roatable:globalFilter" name="roaform:roatable:globalFilter" type="text" onkeyup="roaTable.filter();" class="ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all" role="textbox" aria-disabled="false" aria-readonly="false" aria-multiline="false" placeholder="Enter text to search">
+</div></div>
+<div id="roaform:roatable_paginator_top" class="ui-paginator ui-paginator-top ui-widget-header">
+<span class="ui-paginator-first ui-state-default ui-corner-all ui-state-disabled"><span class="ui-icon ui-icon-seek-first">p</span></span><span class="ui-paginator-prev ui-state-default ui-corner-all ui-state-disabled"><span class="ui-icon ui-icon-seek-prev">p</span></span><span class="ui-paginator-pages"><span class="ui-paginator-page ui-state-default ui-state-active ui-corner-all">1</span></span><span class="ui-paginator-next ui-state-default ui-corner-all ui-state-disabled"><span class="ui-icon ui-icon-seek-next">p</span></span><span class="ui-paginator-last ui-state-default ui-corner-all ui-state-disabled"><span class="ui-icon ui-icon-seek-end">p</span></span>
+</div>
+<div class="ui-datatable-tablewrapper"><table role="grid">
+<thead id="roaform:roatable_head"><tr role="row">
+<th id="roaform:roatable:j_idt99" class="ui-state-default ui-sortable-column ui-filter-column text-center" role="columnheader" style="width:5%">
+<span><span class="label-color">ROA#</span></span><span class="ui-sortable-column-icon ui-icon ui-icon-carat-2-n-s"></span><input id="roaform:roatable:j_idt99:filter" name="roaform:roatable:j_idt99:filter" class="ui-column-filter ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all" value="" autocomplete="off" role="textbox" aria-disabled="false" aria-readonly="false" aria-multiline="false">
+</th>
+<th id="roaform:roatable:j_idt103" class="ui-state-default ui-sortable-column ui-filter-column text-center" role="columnheader" style="width:5%">
+<span><span class="label-color">Entry Date</span></span><span class="ui-sortable-column-icon ui-icon ui-icon-carat-2-n-s"></span><input id="roaform:roatable:j_idt103:filter" name="roaform:roatable:j_idt103:filter" class="ui-column-filter ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all" value="" autocomplete="off" role="textbox" aria-disabled="false" aria-readonly="false" aria-multiline="false">
+</th>
+<th id="roaform:roatable:j_idt106" class="ui-state-default ui-sortable-column ui-filter-column" role="columnheader" style="width:40%">
+<span><span class="label-color">Short/Long Entry</span></span><span class="ui-sortable-column-icon ui-icon ui-icon-carat-2-n-s"></span><input id="roaform:roatable:j_idt106:filter" name="roaform:roatable:j_idt106:filter" class="ui-column-filter ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all" value="" autocomplete="off" role="textbox" aria-disabled="false" aria-readonly="false" aria-multiline="false">
+</th>
+<th id="roaform:roatable:j_idt111" class="ui-state-default ui-sortable-column ui-filter-column" role="columnheader" style="width:10%">
+<span><span class="label-color">Filed By</span></span><span class="ui-sortable-column-icon ui-icon ui-icon-carat-2-n-s"></span><input id="roaform:roatable:j_idt111:filter" name="roaform:roatable:j_idt111:filter" class="ui-column-filter ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all" value="" autocomplete="off" role="textbox" aria-disabled="false" aria-readonly="false" aria-multiline="false">
+</th>
+<th id="roaform:roatable:j_idt114" class="ui-state-default ui-sortable-column ui-filter-column" role="columnheader" style="width:25%">
+<span><span class="label-color">Document</span></span><span class="ui-sortable-column-icon ui-icon ui-icon-carat-2-n-s"></span><input id="roaform:roatable:j_idt114:filter" name="roaform:roatable:j_idt114:filter" class="ui-column-filter ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all" value="" autocomplete="off" role="textbox" aria-disabled="false" aria-readonly="false" aria-multiline="false">
+</th>
+<th id="roaform:roatable:j_idt117" class="ui-state-default" role="columnheader" style="width:14%"><span><span class="label-color">Cart</span></span></th>
+</tr></thead>
+<tfoot></tfoot>
+<tbody id="roaform:roatable_data" class="ui-datatable-data ui-widget-content">
+<tr data-ri="0" class="ui-widget-content ui-datatable-even" role="row">
+<td role="gridcell" class="text-center"><span class="bright-type">7</span></td>
+<td role="gridcell" class="text-center"><span class="bright-type">07/11/2023</span></td>
+<td role="gridcell"><span class="bright-type">Case initiation form printed.</span></td>
+<td role="gridcell"><span class="bright-type"></span></td>
+<td role="gridcell"><span class="bright-type">Notice of Case Assignment SD</span></td>
+<td role="gridcell"><button id="roaform:roatable:0:addbutton" name="roaform:roatable:0:addbutton" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only cart-hicolor" onclick="PrimeFaces.ab({source:'roaform:roatable:0:addbutton',update:'roaform'});return false;" title="2 Pages" type="submit" role="button" aria-disabled="false"><span class="ui-button-text ui-c">Add to Cart</span></button></td>
+</tr>
+<tr data-ri="1" class="ui-widget-content ui-datatable-odd" role="row">
+<td role="gridcell" class="text-center"><span class="bright-type">7</span></td>
+<td role="gridcell" class="text-center"><span class="bright-type">07/11/2023</span></td>
+<td role="gridcell"><span class="bright-type">[Another document for ROA# 7]</span></td>
+<td role="gridcell"><span class="bright-type"></span></td>
+<td role="gridcell"><span class="bright-type">Notice to Litigants SD</span></td>
+<td role="gridcell"><button id="roaform:roatable:1:addbutton" name="roaform:roatable:1:addbutton" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only cart-hicolor" onclick="PrimeFaces.ab({source:'roaform:roatable:1:addbutton',update:'roaform'});return false;" title="2 Pages" type="submit" role="button" aria-disabled="false"><span class="ui-button-text ui-c">Add to Cart</span></button></td>
+</tr>
+<tr data-ri="2" class="ui-widget-content ui-datatable-even" role="row">
+<td role="gridcell" class="text-center"><span class="bright-type">7</span></td>
+<td role="gridcell" class="text-center"><span class="bright-type">07/11/2023</span></td>
+<td role="gridcell"><span class="bright-type">[Another document for ROA# 7]</span></td>
+<td role="gridcell"><span class="bright-type"></span></td>
+<td role="gridcell"><span class="bright-type">Stipulation to Alternative Dispute Resolution Process SD</span></td>
+<td role="gridcell"><button id="roaform:roatable:2:addbutton" name="roaform:roatable:2:addbutton" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only cart-hicolor" onclick="PrimeFaces.ab({source:'roaform:roatable:2:addbutton',update:'roaform'});return false;" title="1 Page" type="submit" role="button" aria-disabled="false"><span class="ui-button-text ui-c">Add to Cart</span></button></td>
+</tr>
+<tr data-ri="3" class="ui-widget-content ui-datatable-odd" role="row">
+<td role="gridcell" class="text-center"><span class="bright-type">6</span></td>
+<td role="gridcell" class="text-center"><span class="bright-type">07/11/2023</span></td>
+<td role="gridcell"><span class="bright-type">Civil Case Management Conference scheduled for 01/26/2024 at 10:00:00 AM at Central in C-68 Richard S. Whitney.</span></td>
+<td role="gridcell"><span class="bright-type"></span></td>
+<td role="gridcell"><span class="bright-type"></span></td>
+<td role="gridcell"></td>
+</tr>
+<tr data-ri="4" class="ui-widget-content ui-datatable-even" role="row">
+<td role="gridcell" class="text-center"><span class="bright-type">5</span></td>
+<td role="gridcell" class="text-center"><span class="bright-type">07/07/2023</span></td>
+<td role="gridcell"><span class="bright-type">Case assigned to Judicial Officer Whitney, Richard.</span></td>
+<td role="gridcell"><span class="bright-type"></span></td>
+<td role="gridcell"><span class="bright-type"></span></td>
+<td role="gridcell"></td>
+</tr>
+<tr data-ri="5" class="ui-widget-content ui-datatable-odd" role="row">
+<td role="gridcell" class="text-center"><span class="bright-type">4</span></td>
+<td role="gridcell" class="text-center"><span class="bright-type">07/11/2023</span></td>
+<td role="gridcell"><span class="bright-type">Summons issued.</span></td>
+<td role="gridcell"><span class="bright-type"></span></td>
+<td role="gridcell"><span class="bright-type"></span></td>
+<td role="gridcell"></td>
+</tr>
+<tr data-ri="6" class="ui-widget-content ui-datatable-even" role="row">
+<td role="gridcell" class="text-center"><span class="bright-type">3</span></td>
+<td role="gridcell" class="text-center"><span class="bright-type">07/07/2023</span></td>
+<td role="gridcell">
+<span class="bright-type">Original Summons filed by HEUBERGER, ERINN.</span>
+                    <br>
+                <span class="bright-type">Refers to: TEEPEE III LLC; Potts, John; Mathews, Tim</span>
+</td>
+<td role="gridcell"><span class="bright-type">HEUBERGER, ERINN (Plaintiff)</span></td>
+<td role="gridcell"><span class="bright-type">Original Summons</span></td>
+<td role="gridcell"><button id="roaform:roatable:6:addbutton" name="roaform:roatable:6:addbutton" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only cart-hicolor" onclick="PrimeFaces.ab({source:'roaform:roatable:6:addbutton',update:'roaform'});return false;" title="1 Page" type="submit" role="button" aria-disabled="false"><span class="ui-button-text ui-c">Add to Cart</span></button></td>
+</tr>
+<tr data-ri="7" class="ui-widget-content ui-datatable-odd" role="row">
+<td role="gridcell" class="text-center"><span class="bright-type">2</span></td>
+<td role="gridcell" class="text-center"><span class="bright-type">07/07/2023</span></td>
+<td role="gridcell">
+<span class="bright-type">Civil Case Cover Sheet filed by HEUBERGER, ERINN.</span>
+                    <br>
+                <span class="bright-type">Refers to: TEEPEE III LLC; Potts, John; Mathews, Tim</span>
+</td>
+<td role="gridcell"><span class="bright-type">HEUBERGER, ERINN (Plaintiff)</span></td>
+<td role="gridcell"><span class="bright-type">Civil Case Cover Sheet</span></td>
+<td role="gridcell"><button id="roaform:roatable:7:addbutton" name="roaform:roatable:7:addbutton" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only cart-hicolor" onclick="PrimeFaces.ab({source:'roaform:roatable:7:addbutton',update:'roaform'});return false;" title="2 Pages" type="submit" role="button" aria-disabled="false"><span class="ui-button-text ui-c">Add to Cart</span></button></td>
+</tr>
+<tr data-ri="8" class="ui-widget-content ui-datatable-even" role="row">
+<td role="gridcell" class="text-center"><span class="bright-type">1</span></td>
+<td role="gridcell" class="text-center"><span class="bright-type">07/07/2023</span></td>
+<td role="gridcell">
+<span class="bright-type">Complaint filed by HEUBERGER, ERINN.</span>
+                    <br>
+                <span class="bright-type">Refers to: TEEPEE III LLC; Potts, John; Mathews, Tim</span>
+</td>
+<td role="gridcell"><span class="bright-type">HEUBERGER, ERINN (Plaintiff)</span></td>
+<td role="gridcell"><span class="bright-type">Complaint</span></td>
+<td role="gridcell"><button id="roaform:roatable:8:addbutton" name="roaform:roatable:8:addbutton" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only cart-hicolor" onclick="PrimeFaces.ab({source:'roaform:roatable:8:addbutton',update:'roaform'});return false;" title="20 Pages" type="submit" role="button" aria-disabled="false"><span class="ui-button-text ui-c">Add to Cart</span></button></td>
+</tr>
+</tbody>
+</table></div>
+<div id="roaform:roatable_paginator_bottom" class="ui-paginator ui-paginator-bottom ui-widget-header ui-corner-bottom">
+<span class="ui-paginator-first ui-state-default ui-corner-all ui-state-disabled"><span class="ui-icon ui-icon-seek-first">p</span></span><span class="ui-paginator-prev ui-state-default ui-corner-all ui-state-disabled"><span class="ui-icon ui-icon-seek-prev">p</span></span><span class="ui-paginator-pages"><span class="ui-paginator-page ui-state-default ui-state-active ui-corner-all">1</span></span><span class="ui-paginator-next ui-state-default ui-corner-all ui-state-disabled"><span class="ui-icon ui-icon-seek-next">p</span></span><span class="ui-paginator-last ui-state-default ui-corner-all ui-state-disabled"><span class="ui-icon ui-icon-seek-end">p</span></span>
+</div>
+</div>
+</div>
+<input type="hidden" id="roaform:roapanel_collapsed" name="roaform:roapanel_collapsed" value="false">
+</div>
+<table class="disclaimer-text disclaimer-border profile-justify" border="2" cellpadding="8" cellspacing="0" frame="box" width="100%">
+<tbody>
+<tr>
+<td>
+          <strong>THE INFORMATION IN THIS REGISTER OF ACTIONS IS PROVIDED AS IS, WITHOUT WARRANTY BY THE SAN DIEGO SUPERIOR COURT AS TO CONTENT OR ACCURACY OF THE INFORMATION.</strong>  The Entry Date on the Register of Actions may not always reflect the actual filing date of a document and not all documents filed with the Court are listed on the Register of Actions.  It is recommended that users refer to the case file for confirmation.
+        </td>
+</tr>
+</tbody>
+</table>
+<input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="-6070055690958789801:1846649999307050921" autocomplete="off">
+</form>
+<div id="textarea_simulator" style="position: absolute; top: 0px; left: 0px; visibility: hidden;"></div>
+<div id="toolbar-form:j_idt23" class="ui-confirm-dialog ui-dialog ui-widget ui-widget-content ui-overlay-hidden ui-corner-all ui-shadow" role="dialog" aria-labelledby="toolbar-form:j_idt23_title" aria-hidden="true" style="width: auto; height: auto;">
+<div class="ui-dialog-titlebar ui-widget-header ui-helper-clearfix ui-corner-top">
+<span class="ui-dialog-title"></span><a href="#" class="ui-dialog-titlebar-icon ui-dialog-titlebar-close ui-corner-all" role="button"><span class="ui-icon ui-icon-closethick"></span></a>
+</div>
+<div class="ui-dialog-content ui-widget-content" style="height: auto;">
+<span class="ui-icon ui-confirm-dialog-severity"></span><span class="ui-confirm-dialog-message"></span>
+</div>
+<div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+      <div style="text-align: center">
+<button id="toolbar-form:j_idt25" name="toolbar-form:j_idt25" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-left ui-confirmdialog-no" type="button" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-arrowreturnthick-1-e"></span><span class="ui-button-text ui-c">Continue</span></button><button id="toolbar-form:j_idt26" name="toolbar-form:j_idt26" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-left" onclick="PrimeFaces.ab({source:'toolbar-form:j_idt26'});return false;" type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c ui-icon-closethick"></span><span class="ui-button-text ui-c">Exit Now</span></button>
+      </div>
+</div>
+</div>
+<div class="ui-dialog-docking-zone"></div>
+<div id="j_idt31:growl_container" class="ui-growl ui-widget" style="z-index: 1001;"></div>
+</body>
+</html>
+</div>

@@ -16,11 +16,10 @@ class AdminController < ApplicationController
       enter_case_info(@cyear, @cnumber)
       get_page(@cyear, @cnumber)
       redirect_to admin_index_path
-
-
   end
 
-
+  def stored_lawsuits
+  end
 
 
 end

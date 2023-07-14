@@ -1,0 +1,96 @@
+<div class="container-fluid">
+
+    <%= form_with(model: client) do |form| %>
+      <% if client.errors.any? %>
+        <div style="color: red">
+          <h2><%= pluralize(client.errors.count, "error") %> prohibited this client from being saved:</h2>
+
+          <ul>
+            <% client.errors.each do |error| %>
+              <li><%= error.full_message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div>
+        <%= form.label :user_id, style: "display: block" %>
+        <%= form.text_field :user_id %>
+      </div>
+
+      <div>
+        <%= form.label :fname, style: "display: block" %>
+        <%= form.text_field :fname %>
+      </div>
+
+      <div>
+        <%= form.label :mname, style: "display: block" %>
+        <%= form.text_field :mname %>
+      </div>
+
+      <div>
+        <%= form.label :lname, style: "display: block" %>
+        <%= form.text_field :lname %>
+      </div>
+
+      <div>
+        <%= form.label :dob, style: "display: block" %>
+        <%= form.text_field :dob %>
+      </div>
+
+      <div>
+        <%= form.label :ssn, style: "display: block" %>
+        <%= form.text_field :ssn %>
+      </div>
+
+      <div>
+        <%= form.label :address, style: "display: block" %>
+        <%= form.text_field :address %>
+      </div>
+
+      <div>
+        <%= form.label :city, style: "display: block" %>
+        <%= form.text_field :city %>
+      </div>
+
+      <div>
+        <%= form.label :state, style: "display: block" %>
+        <%= form.text_field :state %>
+      </div>
+
+      <div>
+        <%= form.label :zip, style: "display: block" %>
+        <%= form.text_field :zip %>
+      </div>
+
+      <div>
+        <%= form.label :phone, style: "display: block" %>
+        <%= form.text_field :phone %>
+      </div>
+
+      <div>
+        <%= form.label :ec_name, style: "display: block" %>
+        <%= form.text_field :ec_name %>
+      </div>
+
+      <div>
+        <%= form.label :ec_phone, style: "display: block" %>
+        <%= form.text_field :ec_phone %>
+      </div>
+
+      <div>
+        <%= form.label :ec_email, style: "display: block" %>
+        <%= form.text_field :ec_email %>
+      </div>
+
+      <div>
+        <%= form.label :dln, style: "display: block" %>
+        <%= form.text_field :dln %>
+      </div>
+
+      <div>
+        <%= form.submit %>
+      </div>
+    <% end %>
+
+</div>
