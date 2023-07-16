@@ -1,3 +1,5 @@
+<%= render 'shared/nav' %>
+
 <div id="<%= dom_id client %>">
 
   <div class="container-fluid">
@@ -7,14 +9,15 @@
         <thead>
           <tr class="table-primary">...
               <th scope="col">Name </th>
-              <th scope="col"></th>
+              <th scope="col">Phone</th>
+              <th scope="col">Email</th>
           </tr>
         </thead>
 
         <tbody>
           <tr>
             <td>
-              <%= link_to "#{client.lname}, #{client.fname}", client %>
+              <%= link_to "#{client.lname}, #{client.fname}", pages_clt_path(client) %>
             </td>
             <td>
               <%= client.phone %>

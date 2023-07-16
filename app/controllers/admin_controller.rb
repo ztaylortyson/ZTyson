@@ -15,6 +15,7 @@ class AdminController < ApplicationController
       get_cns_page
       enter_case_info(@cyear, @cnumber)
       get_page(@cyear, @cnumber)
+      puts " - - - - - - ->    Scraping successful"
       redirect_to admin_index_path
   end
 

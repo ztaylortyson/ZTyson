@@ -7,7 +7,10 @@
     </h2>
     <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
       <div class="accordion-body">
-        <%= @blah %>
+        <strong><%= @loc %></strong><br> 
+        <% @blah.drop(1).each do |i| %>
+            <%= i %><br>
+        <% end %>
       </div>
     </div>
   </div>

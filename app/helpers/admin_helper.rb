@@ -130,8 +130,20 @@ module AdminHelper
 					i << doc
 					i << "</div>"
 				end
+
+				#
+				Dir.chdir(Rails.root.join("app", "views", "scrapes", "xml"))
+				open("#{case_year}-#{case_number}.html", 'a+') do |i|
+					i << doc
+					
+				end
+				#
+
+
 				@driver.quit
 			end
+
+			
 
 
 end

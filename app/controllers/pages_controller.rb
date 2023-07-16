@@ -8,7 +8,19 @@ class PagesController < ApplicationController
       if calnamesearch.include?('Sorry')
         @blah = "No matches found."
       else
-        @blah = calnamesearch
+          puts "Case count: #{calnamesearch.split(/\d{2}\/\d{2}\/\d{2}/).count}"
+          # North County || Central || 
+          # 
+          @loc = calnamesearch.split(/\d{2}\/\d{2}\/\d{2}/).first.split('-------------------------').last().to_s
+
+        @blah = calnamesearch.split(/\d{2}\/\d{2}\/\d{2}/)
       end
   end
+
+  def clt
+      @client = Client.find(params[:format])
+  end
+
+
+
 end
