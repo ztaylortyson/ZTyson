@@ -125,18 +125,18 @@ module AdminHelper
 				Dir.chdir(Rails.root.join("app", "views", "scrapes"))
 				#open("#{case_year}-#{case_number}.html.erb", 'a+') do |i|
 				open("#{case_year}-#{case_number}.html.erb", 'a+') do |i|
-					i << "<%= render 'shared/nav' %><br>" 
+					#i << "<%= render 'shared/nav' %><br>" 
 					i << "<div class='container'>"
 					i << doc
 					i << "</div>"
 				end
 
 				#
-				Dir.chdir(Rails.root.join("app", "views", "scrapes", "xml"))
-				open("#{case_year}-#{case_number}.html", 'a+') do |i|
-					i << doc
+				# Dir.chdir(Rails.root.join("app", "views", "scrapes", "xml"))
+				# open("#{case_year}-#{case_number}.html", 'a+') do |i|
+				# 	i << doc
 					
-				end
+				# end
 				#
 
 

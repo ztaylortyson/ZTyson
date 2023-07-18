@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @lawsuit %>
+
+<div>
+  <%= link_to "Edit this lawsuit", edit_lawsuit_path(@lawsuit) %> |
+  <%= link_to "Back to lawsuits", lawsuits_path %>
+
+  <%= button_to "Destroy this lawsuit", @lawsuit, method: :delete %>
+</div>

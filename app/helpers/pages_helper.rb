@@ -1,7 +1,35 @@
 require 'open-uri'
+require 'nokogiri'
 
 module PagesHelper
 
+	def enigma
+		@ncfs = Ncf.all
+		@ltr = []
+
+		@ncfs.each do |i|
+			@ltr << i.name[0].downcase
+		end
+		
+		@ltr.each do |ltr|
+
+			url = "http://www.sandiego.courts.ca.gov/portal/online/newfiles/nf_cv_#{ltr}.html"
+			page = Nokogiri::HTML(URI.open(url))
+			foo = page.xpath('//tr')[3..220]
+					foo.each do |i|
+						if i.text.match('CASE NUMBER')
+							break
+						else
+							@ltr.each do |e|
+								if i.text.match(e)
+									@yo = i.text
+								end
+							end
+						end
+					end
+		end
+		
+	end
 
 
 	def calnamesearch

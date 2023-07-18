@@ -1,0 +1,81 @@
+<div class="container-fluid">
+
+<%= form_with(model: lawsuit) do |form| %>
+  <% if lawsuit.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(lawsuit.errors.count, "error") %> prohibited this lawsuit from being saved:</h2>
+
+      <ul>
+        <% lawsuit.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :user_id, style: "display: block" %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div>
+    <%= form.label :active, style: "display: block" %>
+    <%= form.check_box :active %>
+  </div>
+
+  <div>
+    <%= form.label :case_number, style: "display: block" %>
+    <%= form.text_field :case_number %>
+  </div>
+
+  <div>
+    <%= form.label :case_title, style: "display: block" %>
+    <%= form.text_field :case_title %>
+  </div>
+
+  <div>
+    <%= form.label :date_filed, style: "display: block" %>
+    <%= form.date_field :date_filed %>
+  </div>
+
+  <div>
+    <%= form.label :cmc, style: "display: block" %>
+    <%= form.date_field :cmc %>
+  </div>
+
+  <div>
+    <%= form.label :judge_name, style: "display: block" %>
+    <%= form.text_field :judge_name %>
+  </div>
+
+  <div>
+    <%= form.label :judge_dept, style: "display: block" %>
+    <%= form.text_field :judge_dept %>
+  </div>
+
+  <div>
+    <%= form.label :case_status, style: "display: block" %>
+    <%= form.text_field :case_status %>
+  </div>
+
+  <div>
+    <%= form.label :last_roa, style: "display: block" %>
+    <%= form.text_field :last_roa %>
+  </div>
+
+  <div>
+    <%= form.label :plt_caption, style: "display: block" %>
+    <%= form.text_field :plt_caption %>
+  </div>
+
+  <div>
+    <%= form.label :def_caption, style: "display: block" %>
+    <%= form.text_field :def_caption %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
+
+</div>

@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @attorney %>
+
+<div>
+  <%= link_to "Edit this attorney", edit_attorney_path(@attorney) %> |
+  <%= link_to "Back to attorneys", attorneys_path %>
+
+  <%= button_to "Destroy this attorney", @attorney, method: :delete %>
+</div>

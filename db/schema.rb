@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_14_181128) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_18_160511) do
   create_table "clients", force: :cascade do |t|
     t.integer "user_id", null: false
     t.string "fname"
@@ -30,6 +30,30 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_14_181128) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_clients_on_user_id"
+  end
+
+  create_table "lawsuits", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.boolean "active"
+    t.string "case_number"
+    t.string "case_title"
+    t.date "date_filed"
+    t.date "cmc"
+    t.string "judge_name"
+    t.string "judge_dept"
+    t.string "case_status"
+    t.string "last_roa"
+    t.string "plt_caption"
+    t.string "def_caption"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_lawsuits_on_user_id"
+  end
+
+  create_table "ncfs", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "name"
   end
 
   create_table "scrapes", force: :cascade do |t|
@@ -59,4 +83,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_14_181128) do
   end
 
   add_foreign_key "clients", "users"
+  add_foreign_key "lawsuits", "users"
 end

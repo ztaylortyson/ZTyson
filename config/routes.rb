@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
+  resources :lawsuits
+
+  resources :ncfs
   root "pages#home"
   resources :clients
 # 
 # Scrapes
  get 'scrapes/index', to: 'scrapes#index'
- get 'scrapes/view', to: 'scrapes#view'
+ get 'scrapes/view'
 
  
   

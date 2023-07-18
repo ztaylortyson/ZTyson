@@ -1,0 +1,16 @@
+
+<div class="container-fluid">
+
+    <p style="color: green"><%= notice %></p>
+
+    <h3><%= @ncf.name %></h3>
+
+    <div>
+      <hr>
+      <%= link_to "Edit this ncf", edit_ncf_path(@ncf) %> |
+      <%= link_to "Back to ncfs", ncfs_path, class: 'btn btn-primary' %>
+
+      <%= button_to "Delete", @ncf, method: :delete, class: 'btn btn-danger' %>
+    </div>
+
+</div>

@@ -1,0 +1,29 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  active: false
+  case_number: MyString
+  case_title: MyString
+  date_filed: 2023-07-18
+  cmc: 2023-07-18
+  judge_name: MyString
+  judge_dept: MyString
+  case_status: MyString
+  last_roa: MyString
+  plt_caption: MyString
+  def_caption: MyString
+
+two:
+  user: two
+  active: false
+  case_number: MyString
+  case_title: MyString
+  date_filed: 2023-07-18
+  cmc: 2023-07-18
+  judge_name: MyString
+  judge_dept: MyString
+  case_status: MyString
+  last_roa: MyString
+  plt_caption: MyString
+  def_caption: MyString

@@ -1,0 +1,17 @@
+<p style="color: green"><%= notice %></p>
+
+
+
+<div class="container-fluid">
+   <h3>Ncfs</h3> 
+      <% @ncfs.each do |ncf| %>
+        <%= render ncf %>
+        
+          <%= link_to "#{ncf.name}", ncf %>
+        
+      <% end %>
+    </div>
+
+    <%= link_to "New ncf", new_ncf_path %>
+
+</div>
