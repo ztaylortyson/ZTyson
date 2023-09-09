@@ -10,7 +10,43 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_18_160511) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_02_190109) do
+  create_table "attorney_lawsuits", force: :cascade do |t|
+    t.integer "Attorney_id", null: false
+    t.integer "Lawsuit_id", null: false
+    t.string "role"
+    t.string "clt"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["Attorney_id"], name: "index_attorney_lawsuits_on_Attorney_id"
+    t.index ["Lawsuit_id"], name: "index_attorney_lawsuits_on_Lawsuit_id"
+  end
+
+  create_table "attorneys", force: :cascade do |t|
+    t.string "sbn"
+    t.string "status"
+    t.string "name"
+    t.string "firm"
+    t.string "address"
+    t.string "city"
+    t.string "state"
+    t.string "zip"
+    t.string "phone"
+    t.string "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "client_lawsuits", force: :cascade do |t|
+    t.integer "Client_id", null: false
+    t.integer "Lawsuit_id", null: false
+    t.string "role"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["Client_id"], name: "index_client_lawsuits_on_Client_id"
+    t.index ["Lawsuit_id"], name: "index_client_lawsuits_on_Lawsuit_id"
+  end
+
   create_table "clients", force: :cascade do |t|
     t.integer "user_id", null: false
     t.string "fname"
@@ -29,7 +65,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_18_160511) do
     t.string "dln"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "email"
     t.index ["user_id"], name: "index_clients_on_user_id"
+  end
+
+  create_table "jcfs", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "lawsuits", force: :cascade do |t|
@@ -47,6 +89,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_18_160511) do
     t.string "def_caption"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "plaintiff"
+    t.string "atty_for"
+    t.string "defendant"
+    t.date "trc"
+    t.date "trial"
+    t.date "discovery_cutoff"
+    t.date "first_expert_exchange"
+    t.date "second_expert_exchange"
     t.index ["user_id"], name: "index_lawsuits_on_user_id"
   end
 
@@ -78,10 +128,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_18_160511) do
     t.string "state"
     t.string "zip"
     t.string "phone"
+    t.string "firm"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "attorney_lawsuits", "Attorneys"
+  add_foreign_key "attorney_lawsuits", "Lawsuits"
+  add_foreign_key "client_lawsuits", "Clients"
+  add_foreign_key "client_lawsuits", "Lawsuits"
   add_foreign_key "clients", "users"
   add_foreign_key "lawsuits", "users"
 end

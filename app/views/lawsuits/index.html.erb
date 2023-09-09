@@ -1,15 +1,14 @@
-
+<div class="container-fluid">
 
 <p style="color: green"><%= notice %></p>
 
-    <h3>Lawsuits</h3>
-    <div id="lawsuits">
-      <% @lawsuits.each do |lawsuit| %>
-        <%= render lawsuit %>
-        <p>
-          <%= link_to "Show this lawsuit", lawsuit %>
-        </p>
-      <% end %>
-    </div>
+   <% @lawsuits.each do |i| %>
 
-    <%= link_to "New lawsuit", new_lawsuit_path %>
+      <%= link_to i.case_title, lawsuit_path(i) %> 
+      <%= i.case_number %><br> 
+
+   <% end %>
+
+
+
+</div>

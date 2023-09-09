@@ -31,11 +31,11 @@ module AdminHelper
 			url = "https://roa.sdcourt.ca.gov/roa/"
 			@driver = Selenium::WebDriver.for :safari
 			@driver.get(url)
-			sleep 1
+			sleep 2
 
 			btn_accept_terms = @driver.find_element(:xpath, "//*[@id='j_idt36']/a[1]")
 			@driver.execute_script("arguments[0].click();", btn_accept_terms)
-			sleep 2
+			sleep 4
 			@foo = @driver.current_url 
 		end
 	# get icon that best identifies . . 
@@ -43,7 +43,7 @@ module AdminHelper
 			doc = Nokogiri::HTML(@driver.page_source)
 			icon_word = doc.css('span.bold-type').text
 			puts icon_word.inspect
-			sleep 1
+			sleep 2
 			return icon_word
 		end
 	# find best icon 
@@ -80,7 +80,7 @@ module AdminHelper
 	######################################
 	# click the correct captcha icon
 		def click_captcha_icon(x)
-			puts "//input[@id='j_idt12:button#{x}']"
+			puts "//input[@id='j_idt11:button#{x}']"
 			click_icon = @driver.find_element(:xpath, "//input[@id='j_idt12:button#{x}']")
 			@driver.execute_script("arguments[0].click();", click_icon)
 			sleep 1		
@@ -124,7 +124,7 @@ module AdminHelper
 
 				Dir.chdir(Rails.root.join("app", "views", "scrapes"))
 				#open("#{case_year}-#{case_number}.html.erb", 'a+') do |i|
-				open("#{case_year}-#{case_number}.html.erb", 'a+') do |i|
+				open("#{case_year}-#{case_number}.html.erb", 'w+') do |i|
 					#i << "<%= render 'shared/nav' %><br>" 
 					i << "<div class='container'>"
 					i << doc

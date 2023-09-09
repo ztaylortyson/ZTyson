@@ -9,6 +9,9 @@ gem 'bootstrap', '~> 5.3.0.alpha3'
 gem 'jquery-rails'
 gem "selenium-webdriver"
 gem "webdrivers"
+gem "docx"
+gem "pdf-reader"
+gem "pdf-forms"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
@@ -70,9 +73,9 @@ end
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
-  gem "capybara"
-  gem "selenium-webdriver"
-  gem "webdrivers"
+  # gem "capybara"
+  # gem "selenium-webdriver"
+  # gem "webdrivers"
 end
 
 gem "devise", "~> 4.9"

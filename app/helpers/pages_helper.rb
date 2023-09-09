@@ -2,6 +2,24 @@ require 'open-uri'
 require 'nokogiri'
 
 module PagesHelper
+	CAL = "http://www.sandiego.courts.ca.gov/portal/online/calendar/D_SVCAL1.HTML"
+	
+	def calnamesearch
+		url = "https://www.sandiego.courts.ca.gov/scripts/seekcalendar.pl?z=portal&g=&j=&p=&a=tyson"
+		page = Nokogiri::HTML(URI.open(url))
+		foo = page.search("pre").text
+	end
+
+	def trialsoncal
+				@trial_cal = []
+				@page = Nokogiri::HTML(URI.open(CAL))
+				@page.xpath('//tr[@class="MYDETAILTABLE"]').each do |i|
+					if i.inner_html.include?('Trial')
+						@trial_cal << i.text  
+					end
+				end
+				return @trial_cal
+	end
 
 	def enigma
 		@ncfs = Ncf.all
@@ -32,25 +50,31 @@ module PagesHelper
 	end
 
 
-	def calnamesearch
-		url = "https://www.sandiego.courts.ca.gov/scripts/seekcalendar.pl?z=portal&g=&j=&p=&a=tyson"
-		page = Nokogiri::HTML(URI.open(url))
-		foo = page.search("pre").text
+	class GetCertainCases
+			def initialize
+				@arry = []
+				@page = Nokogiri::HTML(URI.open(CAL))
+			end
+			def get_all_oe_cases
+				@page.css('tr.MYDETAILTABLE > td > a').each do |cn|
+					return @arry << cn.text.strip if cn.inner_html.split('-')[4] == 'OE'
+					end
+			end
+			def get_all_wt_cases
+				@page.css('tr.MYDETAILTABLE > td > a').each do |cn|
+					return @arry << cn.text.strip if cn.inner_html.split('-')[4] == 'OE'
+					end
+			end
+			def scrape
+				@arry.each do |i|
+				cal_s_url = "http://www.sandiego.courts.ca.gov/scripts/seekcalendar.pl?z=portal&g=#{i}&j=&p=&a="
+				doc = Nokogiri::HTML(URI.open(cal_s_url))
+				@counter += 1
+				puts @counter
+				puts doc.css('pre').text
+				@tada = @page.css('center').text
+			end
 	end
-
-	def oecases
-		# url = "http://www.sandiego.courts.ca.gov/portal/online/calendar/D_SVCAL1.HTML"
-		# arry = []
-		# page = Nokogiri::HTML(URI.open(url))
-		# page.css('tr.MYDETAILTABLE > td > a').each do |cn|
-		# 	arry << cn.text.strip if cn.inner_html.split('-')[4] == 'OE'
-	end
-
-	
-
-
-
-
 
 	# def foo
 	# 	"hello, Zack!"
@@ -189,7 +213,7 @@ module PagesHelper
 
 
 end
-
+end
 
 
 

@@ -1,0 +1,2 @@
+class ClientLawsuitsController < ApplicationController
+end

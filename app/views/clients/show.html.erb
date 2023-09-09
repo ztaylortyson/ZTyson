@@ -1,7 +1,36 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @client %>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Last Name.</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Email</th>
+     
+    </tr>
+    <tbody>
+      <tr>
+        <td><%= @client.lname %></td>
+        <td><%= @client.fname %></td>
+        <td><%= @client.phone %></td>
+        <td><%= @client.email %></td>
 
+      </tr>
+
+
+      <tr> 
+        <td><%= @client.fname %> <%= @client.lname %><td>
+      </tr>
+
+
+
+
+    </tbody>
+  
+</table>
+<br>
+<hr>
 <div>
   <%= link_to "Edit this client", edit_client_path(@client) %> |
   <%= link_to "Back to clients", clients_path %>

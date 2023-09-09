@@ -17,6 +17,11 @@
   </div>
 
   <div>
+    <%= form.label :status, style: "display: block" %>
+    <%= form.text_field :status %>
+  </div>
+
+  <div>
     <%= form.label :name, style: "display: block" %>
     <%= form.text_field :name %>
   </div>
@@ -54,16 +59,6 @@
   <div>
     <%= form.label :email, style: "display: block" %>
     <%= form.text_field :email %>
-  </div>
-
-  <div>
-    <%= form.label :website, style: "display: block" %>
-    <%= form.text_field :website %>
-  </div>
-
-  <div>
-    <%= form.label :discipline, style: "display: block" %>
-    <%= form.check_box :discipline %>
   </div>
 
   <div>

@@ -37,7 +37,7 @@ class LawsuitsController < ApplicationController
   # PATCH/PUT /lawsuits/1 or /lawsuits/1.json
   def update
     respond_to do |format|
-      if @lawsuit.update(lawsuit_params)
+      if @lawsuit.save(lawsuit_params)
         format.html { redirect_to lawsuit_url(@lawsuit), notice: "Lawsuit was successfully updated." }
         format.json { render :show, status: :ok, location: @lawsuit }
       else
@@ -65,6 +65,8 @@ class LawsuitsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def lawsuit_params
-      params.require(:lawsuit).permit(:user_id, :active, :case_number, :case_title, :date_filed, :cmc, :judge_name, :judge_dept, :case_status, :last_roa, :plt_caption, :def_caption)
+      params.require(:lawsuit).permit(:user_id, :active, :case_number, :case_title, :date_filed, :cmc, :judge_name,
+                :judge_dept, :case_status, :last_roa, :plt_caption, :def_caption, :trial, :trc, :discovery_cutoff,
+                :first_expert_exchange, :second_expert_exchange)
     end
 end

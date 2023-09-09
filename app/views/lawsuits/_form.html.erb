@@ -74,6 +74,46 @@
   </div>
 
   <div>
+    <%= form.label :atty_for, style: "display: block" %>
+    <%= form.text_field :atty_for %>
+  </div>
+  <div>
+    <%= form.label :plaintiff, style: "display: block" %>
+    <%= form.text_field :plaintiff %>
+  </div>
+  <div>
+    <%= form.label :defendant, style: "display: block" %>
+    <%= form.text_field :defendant %>
+  </div>
+
+  <div>
+    <%= form.label :trial, style: "display: block" %>
+    <%= form.date_field :trial %>
+  </div>
+  <div>
+    <%= form.label :trc, style: "display: block" %>
+    <%= form.date_field :trc %>
+  </div>
+
+   <div>
+    <%= form.label :discovery_cutoff, style: "display: block" %>
+    <%= form.date_field :discovery_cutoff %>
+    </div>
+
+  <div>
+    <%= form.label :first_expert_exchange, style: "display: block" %>
+    <%= form.date_field :first_expert_exchange %>
+  </div>
+   <div>
+    <%= form.label :second_expert_exchange, style: "display: block" %>
+    <%= form.date_field :second_expert_exchange %>
+  </div>
+
+
+</div>
+
+<br>
+  <div>
     <%= form.submit %>
   </div>
 <% end %>

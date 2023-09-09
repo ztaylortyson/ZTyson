@@ -1,14 +1,17 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Attorneys</h1>
-<%= render 'shared/nav' %>
-<div id="attorneys">
-  <% @attorneys.each do |attorney| %>
-    <%= render attorney %>
-    <p>
-      <%= link_to "Show this attorney", attorney %>
-    </p>
-  <% end %>
-</div>
+<div class="container-fluid">
 
-<%= link_to "New attorney", new_attorney_path %>
+    <h3>Attorneys</h3>
+
+    <div id="attorneys">
+      <% @attorneys.each do |attorney| %>
+        <%= link_to attorney.name, attorney %> <%= attorney.firm %><br>
+
+      <% end %>
+    </div>
+    <br>
+    <%= link_to "New attorney", new_attorney_path, class:"btn btn-warning" %>
+
+
+</div>

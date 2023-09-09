@@ -1,4 +1,43 @@
-<h1>Client - Details Page</h1><br>
+<h3>Client - Details Page</h3><br>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Last Name.</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Email</th>
+     
+    </tr>
+    <tbody>
+      <tr>
+        <td><%= @client.lname %></td>
+        <td><%= @client.fname %></td>
+        <td><%= @client.phone %></td>
+        <td><%= @client.email %></td>
+      </tr>
+
+       <tr> 
+        <td><%= @client.fname %> <%= @client.lname %><br>
+          <%= @client.address %><br>
+          <%= @client.city %> <%= @client.state %> <%= @client.zip %><br>
+        <td>
+      </tr>
+
+      <tr> 
+        <td>
+        <%= link_to "Create Envelope", pages_cltenvelope_path(@client), class:"btn btn-info" %>
+        </td>
+      </tr>
 
 
-<%= @client.inspect %> 
+
+
+    </tbody>
+  
+</table>
+
+<br>
+<hr>
+<%= link_to "Edit this client", edit_client_path(@client), class:"btn btn-outline-info" %> |
+ <%= button_to "Destroy this client", @client, method: :delete, class:"btn btn-danger" %>

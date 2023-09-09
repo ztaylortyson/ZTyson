@@ -3,10 +3,10 @@ class AdminController < ApplicationController
   before_action :authenticate_user!
   
   include AdminHelper
-  include BlahHelper
+  
 
   def index
-  
+      
   end
 
 

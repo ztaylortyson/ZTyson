@@ -1,0 +1,2 @@
+class Jcf < ApplicationRecord
+end

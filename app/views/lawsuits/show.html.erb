@@ -1,10 +1,196 @@
 <p style="color: green"><%= notice %></p>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Case No.</th>
+      <th scope="col">Case Title</th>
+      <th scope="col">Filed</th>
+      <th scope="col">Judge</th>
+    </tr>
+    <tbody>
+      <tr>
+        <td><%= @lawsuit.case_number %></td>
+        <td><%= @lawsuit.case_title %></td>
+        <% if @lawsuit.date_filed %>
+          <td><%= @lawsuit.date_filed.strftime('%m-%d-%Y') %></td>
+        <% end %> 
+        <td><%= @lawsuit.judge_name %></td>
+      </tr>
 
-<%= render @lawsuit %>
 
+      <tr>
+        <td><strong>Dates:</strong></td>
+      </tr>
+
+
+      <tr>
+        <td>Trial Call:
+            <% if @lawsuit.trial.present? %>
+              <%= @lawsuit.trial.strftime('%m-%d-%Y') %>
+            <% else %>
+            Not set
+            <% end %> 
+        </td>
+
+        <td>30 Days Before Trial: 
+             <% if @lawsuit.trial.present? %>
+              <%= (@lawsuit.trial - 30).strftime('%m-%d-%Y') %>
+            <% else %>
+            Not set
+            <% end %> 
+        </td>
+
+
+      <tr>
+        <td>Trial Readiness Conference:
+            <% if @lawsuit.trc.present? %>
+              <%= @lawsuit.trc.strftime('%m-%d-%Y') %>
+            <% else %>
+            Not set
+            <% end %> 
+        </td>
+      </tr>
+
+      <tr>
+        <td>Discovery CutOff:
+            <% if @lawsuit.discovery_cutoff.present? %>
+              <%= @lawsuit.discovery_cutoff.strftime('%m-%d-%Y') %>
+            <% else %>
+            Not set
+            <% end %> 
+        </td>
+
+        <td>105 Days Before Trial: 
+            <% if @lawsuit.trial.present? %>
+              <%= (@lawsuit.trial - 105).strftime('%m-%d-%Y') %>
+              <% end %> 
+        </td>
+          
+        </tr>
+
+        <tr>
+          <td>
+            <td>35 Days Before MSJ:
+              <% if @lawsuit.trial.present? %>
+                <%= (@lawsuit.trial - 140).strftime('%m-%d-%Y') %>
+                <% end %> 
+          </td>
+          </td>
+        </tr>
+
+        <tr>
+            <td>
+                <td>30 Days Before CutOff:
+                  <% if @lawsuit.discovery_cutoff.present? %>
+                      <%= (@lawsuit.discovery_cutoff - 30).strftime('%m-%d-%Y') %>
+                      <% end %> 
+                </td>
+            </td>
+        </tr>
+
+
+        <tr>
+          <td><strong> Counsel: </strong></td>
+           
+        </tr>
+        <tr>
+           <td><% @lawsuit.attorney_lawsuits.each do |i| %>
+              <%= link_to "#{Attorney.find(i.Attorney_id).name}", attorney_path(i.Attorney_id) %> <%= i.role %>
+              <% end %>
+            </td>
+        </tr>
+
+    </tbody>
+  
+</table>
+
+<br>
 <div>
   <%= link_to "Edit this lawsuit", edit_lawsuit_path(@lawsuit) %> |
   <%= link_to "Back to lawsuits", lawsuits_path %>
 
-  <%= button_to "Destroy this lawsuit", @lawsuit, method: :delete %>
+  <%= button_to "Destroy this lawsuit", @lawsuit, method: :delete, data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'}, class: 'btn btn-danger' %>
 </div>
+<br>
+<footer>
+<!-- <div class="fixed-bottom"> -->
+    <div class="container-fluid">
+        <div class="btn-group dropup">
+          <button type="button" class="btn btn-outline-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            Pleadings
+          </button>
+          
+          <ul class="dropdown-menu">
+            <li><%= link_to "Generic Pleading", pleadings_generic_path(@lawsuit), class:'dropdown-item' %></li>
+            <li><%= link_to "Proof of Service", "#", class:'dropdown-item' %></li>
+            <li><%= link_to "Declaration - Atty", pleadings_decl_atty_path(@lawsuit), class:'dropdown-item' %></li>
+          </ul>
+        </div>
+
+        <div class="btn-group dropup">
+          <button type="button" class="btn btn-outline-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            Judicial Counsel Forms
+          </button>
+          <ul class="dropdown-menu">
+            <li><%= link_to "CMC Statement", jcfs_cms_path(@lawsuit), class:'dropdown-item' %></li>
+            <li><%= link_to "Ex Parte App", jcfs_ex_parte_path(@lawsuit), class:'dropdown-item' %></li>
+            <li><%= link_to "Request for Dismissal", jcfs_dismissal_path(@lawsuit), class:'dropdown-item' %></li>
+            <li><%= link_to "Proof of Electronic Service", jcfs_pes_path(@lawsuit), class:'dropdown-item' %></li>
+          </ul>
+        </div>
+
+        <div class="btn-group dropup">
+          <button type="button" class="btn btn-outline-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            Correspondence
+          </button>
+          <ul class="dropdown-menu">
+            <li><%= link_to "Envelope", "Z", class:'dropdown-item' %></li>
+            <li><%= link_to "Ltr - Generic", "#", class:'dropdown-item' %></li>
+            <li><%= link_to "Ltr to OC", "#", class:'dropdown-item' %></li>
+            <li><%= link_to "Meet and Confer", "#", class:'dropdown-item' %></li>
+            <li><%= link_to "Something else", "#", class:'dropdown-item' %></li>
+          </ul>
+        </div>
+
+        <div class="btn-group dropup">
+          <button type="button" class="btn btn-outline-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            Discovery
+          </button>
+          <ul class="dropdown-menu">
+            <li><%= link_to "Supp Interrogatories", pleadings_supp_interrogatories_path(@lawsuit), class:'dropdown-item' %></li>
+            <li><%= link_to "Frog-General", jcfs_frog_general_path(@lawsuit), class:'dropdown-item' %></li>
+            <li><%= link_to "Frog-Employment", jcfs_frog_employment_path(@lawsuit), class:'dropdown-item' %></li>
+            <li><%= link_to "RFAs", jcfs_rfa_path(@lawsuit), class:'dropdown-item' %></li>
+            <li><%= link_to "Special Interrogatories", discovery_srog_path(@lawsuit), class:'dropdown-item' %></li>
+            <li><%= link_to "Document Production", discovery_rfp_path(@lawsuit), class:'dropdown-item' %></li>
+          </ul>
+        </div>
+
+        <div class="btn-group dropup">
+          <button type="button" class="btn btn-outline-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            Responses
+          </button>
+          <ul class="dropdown-menu">
+            <li><%= link_to "Verification", responses_verification_path(@lawsuit), class:'dropdown-item' %></li>
+          </ul>
+          <ul class="dropdown-menu">
+            <li><%= link_to "Resp RFP", "#", class:'dropdown-item' %></li>
+          </ul>
+        </div>
+
+
+        <div class="btn-group dropup">
+          <button type="button" class="btn btn-outline-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            Law and Motion
+          </button>
+          <ul class="dropdown-menu">
+            <li><%= link_to "MTC Separate Statement", "#", class:'dropdown-item' %></li>
+          </ul>
+        </div>
+
+
+
+    </div><br>
+<!-- </div> -->
+</footer>
+

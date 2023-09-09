@@ -1,10 +1,21 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @attorney %>
+<div class="container-fluid">
 
-<div>
-  <%= link_to "Edit this attorney", edit_attorney_path(@attorney) %> |
-  <%= link_to "Back to attorneys", attorneys_path %>
+    <%= render @attorney %>
+<br>
+<hr>
+     <%= link_to "Envelope", pages_attyenvelope_path(@attorney), class: "btn btn-warning" %>
+     <%= link_to "Letter", pages_attycorres_path(@attorney), class: "btn btn-warning" %>
+<br>    
+<hr>
+    <div>
+      <%= link_to "Edit this attorney", edit_attorney_path(@attorney) %> |
+      <%= link_to "Back to attorneys", attorneys_path %>
 
-  <%= button_to "Destroy this attorney", @attorney, method: :delete %>
+      <%= button_to "Destroy this attorney", @attorney, method: :delete %>
+    </div>
+
+
+
 </div>
