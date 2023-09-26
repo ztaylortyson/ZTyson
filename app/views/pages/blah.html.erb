@@ -1,0 +1,30 @@
+<div class="container-fluid">
+	<em><%= @lawsuit.case_title %></em>
+
+
+<table class="table table-hover">
+	<tr>
+		<th>Date</th>
+		<th>Description</th>
+		<th>Binder</th>
+		<th>Costs</th>
+	</tr>
+	<% @journal.each do |i| %>
+	<tr>
+		<td><%= i.event_date %></td>
+		<td><%= i.description %></td>
+		<td><%= i.binder %></td>
+		<td><%= i.cost %></td>
+	</tr>
+	<% end %>
+</table>
+</div>
+
+<br>
+<hr>
+<%= params.inspect %> <br>
+<%= @journal.inspect %> 
+<hr>
+<%= @lawsuit.inspect %> 
+
+A!xdeQ74lkj5z

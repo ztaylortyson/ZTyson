@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_02_190109) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_21_180247) do
   create_table "attorney_lawsuits", force: :cascade do |t|
     t.integer "Attorney_id", null: false
     t.integer "Lawsuit_id", null: false
@@ -72,6 +72,18 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_02_190109) do
   create_table "jcfs", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "journals", force: :cascade do |t|
+    t.date "event_date"
+    t.text "description"
+    t.string "binder"
+    t.string "note"
+    t.decimal "cost"
+    t.integer "Lawsuit_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["Lawsuit_id"], name: "index_journals_on_Lawsuit_id"
   end
 
   create_table "lawsuits", force: :cascade do |t|
@@ -138,5 +150,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_02_190109) do
   add_foreign_key "client_lawsuits", "Clients"
   add_foreign_key "client_lawsuits", "Lawsuits"
   add_foreign_key "clients", "users"
+  add_foreign_key "journals", "Lawsuits"
   add_foreign_key "lawsuits", "users"
 end

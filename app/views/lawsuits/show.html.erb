@@ -103,6 +103,11 @@
     </tbody>
   
 </table>
+<br>
+<div class="container-fluid">
+  <%= link_to "New Journal Entry", new_journal_path(@lawsuit), class:"btn btn-primary" %> 
+  <%= link_to "Journal", pages_blah_path(@lawsuit), class:"btn btn-primary" %> 
+</div>
 
 <br>
 <div>
@@ -184,7 +189,23 @@
             Law and Motion
           </button>
           <ul class="dropdown-menu">
-            <li><%= link_to "MTC Separate Statement", "#", class:'dropdown-item' %></li>
+            <li><%= link_to "Notice of Motion", discovery_notice_of_motion_path(@lawsuit), class: 'dropdown-item' %></li>
+            <li><%= link_to "Memo P and A", discovery_memo_panda_path(@lawsuit), class:'dropdown-item' %></li>
+            <li><%= link_to "MTC Separate Statement", discovery_sep_statement_path(@lawsuit), class:'dropdown-item' %></li>
+             <li><%= link_to "Decl of Attorney", discovery_atty_decl_path(@lawsuit), class:'dropdown-item' %></li>
+            <li><%= link_to "[Proposed] Order", discovery_proposed_order_path(@lawsuit), class: 'dropdown-item' %></li>
+          </ul>
+        </div>
+
+        <div class="btn-group dropup">
+          <button type="button" class="btn btn-outline-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            Depositions
+          </button>
+          <ul class="dropdown-menu">
+            <li><%= link_to "PMK Deposition Notice", "#", class: 'dropdown-item' %></li>
+            <li><%= link_to "Individual Depo Notice", discovery_memo_panda_path(@lawsuit), class:'dropdown-item' %></li>
+            <li><%= link_to "Subpoena", "#", class: 'dropdown-item' %></li>
+            
           </ul>
         </div>
 

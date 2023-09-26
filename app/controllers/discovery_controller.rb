@@ -8,18 +8,35 @@ class DiscoveryController < ApplicationController
     @lawsuit = Lawsuit.find(params[:format])
   end
 
+  def lab
+    set_lawsuit
+    puts "*********** *   ** *   *     *********    * ********   * * *   ******* ** *"
+    puts "#{@lawsuit.atty_for}".upcase
+  end
+
   def populate
-    @doc.bookmarks['case_number'].insert_text_after(@lawsuit.case_number)
-    @doc.bookmarks['atty_for'].insert_text_after(@lawsuit.atty_for)
-    @doc.bookmarks['date_filed'].insert_text_after(@lawsuit.date_filed)
-    #@doc.bookmarks['trial_date'].insert_text_after(@lawsuit.trial_date)
+    if @doc.bookmarks['case_number']
+      @doc.bookmarks['case_number'].insert_text_after(@lawsuit.case_number)
+    end
+    if @doc.bookmarks['atty_for']
+      @doc.bookmarks['atty_for'].insert_text_after("#{@lawsuit.atty_for}".upcase)
+    end
+    if @doc.bookmarks['date_filed']
+      @doc.bookmarks['date_filed'].insert_text_after(@lawsuit.date_filed)
+    end
+    if  @doc.bookmarks['trial']
+      @doc.bookmarks['trial'].insert_text_after(@lawsuit.trial)
+    end
     @doc.bookmarks['plt_caption'].insert_text_after(@lawsuit.plt_caption)
     @doc.bookmarks['def_caption'].insert_text_after(@lawsuit.def_caption)
     @doc.bookmarks['judge_name'].insert_text_after(@lawsuit.judge_name)
     @doc.bookmarks['judge_dept'].insert_text_after(@lawsuit.judge_dept)
-    @doc.bookmarks['plaintiff'].insert_text_after(@lawsuit.plaintiff)
-    @doc.bookmarks['defendant'].insert_text_after(@lawsuit.defendant)
-
+    if @doc.bookmarks['plaintiff'] 
+      @doc.bookmarks['plaintiff'].insert_text_after(@lawsuit.plaintiff)
+    end
+    if @doc.bookmarks['defendant']
+      @doc.bookmarks['defendant'].insert_text_after(@lawsuit.defendant)
+    end
 
   end
 
@@ -55,6 +72,57 @@ class DiscoveryController < ApplicationController
       populate
       @doc.save("#{@lawsuit.atty_for}_#{foo}.docx")
       download(foo)
+  end
+
+  def notice_of_motion
+    foo = __method__
+    set_lawsuit
+    goto_discovery_folder
+    @doc = Docx::Document.open("#{foo}.docx")
+    populate
+    @doc.save("#{@lawsuit.atty_for}_#{foo}.docx")
+    download(foo)
+  end
+
+  def sep_statement
+    foo = __method__
+    set_lawsuit
+    goto_discovery_folder
+    @doc = Docx::Document.open("#{foo}.docx")
+    populate
+    @doc.save("#{@lawsuit.atty_for}_#{foo}.docx")
+    download(foo)
+  end
+
+  def atty_decl
+    foo = __method__
+    set_lawsuit
+    goto_discovery_folder
+    @doc = Docx::Document.open("#{foo}.docx")
+    populate
+    @doc.save("#{@lawsuit.atty_for}_#{foo}.docx")
+    download(foo)
+  end
+
+  def memo_panda
+    foo = __method__
+    set_lawsuit
+    goto_discovery_folder
+    @doc = Docx::Document.open("#{foo}.docx")
+    populate
+    @doc.save("#{@lawsuit.atty_for}_#{foo}.docx")
+    download(foo)
+  end
+
+  def proposed_order
+    foo = __method__
+    set_lawsuit
+    goto_discovery_folder
+    @doc = Docx::Document.open("#{foo}.docx")
+    populate
+    @doc.save("#{@lawsuit.atty_for}_#{foo}.docx")
+    lab
+    download(foo)
   end
 
   def depo_pmk

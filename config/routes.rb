@@ -1,11 +1,20 @@
 Rails.application.routes.draw do
+  resources :journals
+  get 'pages/blah', to: 'pages#blah'
+# DISCOVERY
   get 'discovery/srog'
+  get 'discovery/rfp', to: 'discovery#rfp'
   get 'discovery/frog_e'
   get 'discovery/frog_g'
   get 'discovery/rfa'
   get 'discovery/depo_pmk'
   get 'discovery/depo_indiv'
-  #resources :jcfs
+  get 'discovery/sep_statement'
+  get 'discovery/proposed_order'
+  get 'discovery/notice_of_motion'
+  get 'discovery/atty_decl'
+  get 'discovery/memo_panda'
+#resources :jcfs
   resources :client_lawsuits
   resources :attorney_lawsuits
   resources :attorneys
@@ -56,8 +65,6 @@ Rails.application.routes.draw do
 # Responses
   get 'responses/verification', to: 'responses#verification'
 
-# DISCOVERY
-  get 'discovery/srog', to: 'discovery#srog'
-  get 'discovery/rfp', to: 'discovery#rfp'
+
 
 end

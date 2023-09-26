@@ -4,6 +4,10 @@ class PagesController < ApplicationController
 
   include PagesHelper
   
+  def blah
+      @lawsuit = Lawsuit.find(params[:format])
+      @journal = Journal.where(Lawsuit_id: params[:format])
+  end
 
   def home
         if calnamesearch.include?('Sorry')

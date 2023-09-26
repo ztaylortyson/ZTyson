@@ -1,0 +1,49 @@
+<div class="container-fluid">
+    <%= form_with(model: journal) do |form| %>
+      <% if journal.errors.any? %>
+        <div style="color: red">
+          <h2><%= pluralize(journal.errors.count, "error") %> prohibited this journal from being saved:</h2>
+          <ul>
+            <% journal.errors.each do |error| %>
+              <li><%= error.full_message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <div>
+        <%= form.label :event_date, style: "display: block" %>
+        <%= form.date_field :event_date %>
+      </div>
+      <div>
+        <%= form.label :description, style: "display: block" %>
+        <%= form.text_area :description %>
+      </div>
+      <div>
+        <%= form.label :binder, style: "display: block" %>
+        <%= form.select :binder, ["Notes", "Pleadings", "Discovery"] %>
+      </div>
+      <div>
+        <%= form.label :note, style: "display: block" %>
+        <%= form.text_field :note %>
+      </div>
+      <div>
+        <%= form.label :cost, style: "display: block" %>
+        <%= form.text_field :cost %>
+      </div>
+
+
+      <div>
+        <%= form.label :Lawsuit_id, style: "display: block" %>
+        <%= form.collection_select  :Lawsuit_id, Lawsuit.all, :id, :case_title, prompt: true %>  
+      </div>
+
+
+      <div>
+        <%= form.submit %>
+      </div>
+    <% end %>
+</div>
+
+<%= @lawsuit.inspect %>
+<hr> 
+<%= @lawsuit.id %> 

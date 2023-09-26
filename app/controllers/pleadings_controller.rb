@@ -51,7 +51,9 @@ class PleadingsController < ApplicationController
 	    puts " = = =       =     =    =  = = = = =   = ==  = =   = =    ==  = = == == ="
 	    #puts @lawsuit.date_filed.strftime("%m/%d/%Y")
 	    @doc.bookmarks['date_filed'].insert_text_after(@lawsuit.date_filed.strftime("%m/%d/%Y"))
-	     @doc.bookmarks['trial_date'].insert_text_after(@lawsuit.trial.strftime("%m/%d/%Y"))
+	    # if @doc.bookmarks['trial_date']
+	    #  	@doc.bookmarks['trial_date'].insert_text_after(@lawsuit.trial.strftime("%m/%d/%Y"))
+		# end
 	end
 
 	def supp_interrogatories
@@ -83,7 +85,9 @@ class PleadingsController < ApplicationController
 	    @doc.bookmarks['judge_dept'].insert_text_after(@lawsuit.judge_dept)
 	    @doc.bookmarks['defendant'].insert_text_after(@lawsuit.defendant)
 	    @doc.bookmarks['date_filed'].insert_text_after(@lawsuit.date_filed.strftime("%m/%d/%Y"))
-	    @doc.bookmarks['trial_date'].insert_text_after(@lawsuit.trial.strftime("%m/%d/%Y"))
+	    if @doc.bookmarks['trial']
+	    	@doc.bookmarks['trial'].insert_text_after(@lawsuit.trial.strftime("%m/%d/%Y"))
+		end
 	end
 
 

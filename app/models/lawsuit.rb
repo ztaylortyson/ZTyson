@@ -7,6 +7,6 @@ class Lawsuit < ApplicationRecord
   has_many :client_lawsuits
   has_many :clients, through: :client_lawsuits
   
-
+  has_many :journals
 
 end

@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  event_date: 2023-09-21
+  description: MyText
+  binder: MyString
+  note: MyString
+  cost: 9.99
+  Lawsuit: one
+
+two:
+  event_date: 2023-09-21
+  description: MyText
+  binder: MyString
+  note: MyString
+  cost: 9.99
+  Lawsuit: two
